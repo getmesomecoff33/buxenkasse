@@ -1,0 +1,24 @@
+{%extends 'base.html'%} {%block main%}
+<h1>Order</h1>
+<div class="section-heading">
+  <h2>{{user[0]}}</h2>
+  <h2>Total: {{user[1]}} $</h2>
+</div>
+<a href="{{url_for('user_tab', username=user[0])}}"
+  ><button class="form-btn">Details</button></a
+>
+
+{%endblock%} {%block footer%}
+<div class="grid-container">
+  {%for item in card%}
+  <a
+    href="{{url_for('place_order', drink=item[0], price=item[1],username=user[0])}}"
+  >
+    <div class="grid-element">
+      {{item[0]}} <br />
+      {{item[1]}} $
+    </div>
+  </a>
+  {%endfor%}
+</div>
+{%endblock%}

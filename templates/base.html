@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Theke</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav>
+        <ul>
+          <li><a href="{{url_for('bar_render')}}">Bar</a></li>
+          <li><a href="{{url_for('card_render')}}">Card</a></li>
+          <li><a href="{{url_for('login')}}">XXX</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main>{% block main %}{% endblock %}</main>
+    <footer>{% block footer %}{% endblock %}</footer>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{%extends 'base.html'%} {%block main%}
+<h1>BAR</h1>
+<div class="grid-container">
+  {%for user in users%}
+  <a href="{{url_for('order', username=user[0])}}">
+    <div class="grid-element">
+      {{user[0]}} <br />
+      {{user[4]}}
+    </div>
+  </a>
+  {%endfor%}
+</div>
+{%endblock%} {%block footer%} {%endblock%}

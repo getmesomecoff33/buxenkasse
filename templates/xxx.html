@@ -1,0 +1,64 @@
+{%extends 'base.html'%} {%block main%}
+<a href="{{url_for('billing')}}">
+  <button class="form-btn">Rechnung</button>
+</a>
+<div class="table-container">
+  <table class="table">
+    <tbody>
+      {%for user in users%}
+      <tr>
+        <td>
+          <a href="{{url_for('delete_user',username=user[0])}}">{{user[0]}}</a>
+        </td>
+        <td>
+          <a href="{{url_for('delete_user',username=user[0])}}">{{user[1]}}</a>
+        </td>
+        <td>
+          <a href="{{url_for('delete_user',username=user[0])}}">{{user[2]}}</a>
+        </td>
+
+        <td>
+          <a href="{{url_for('delete_user',username=user[0])}}">{{user[4]}}</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{%endblock%} {%block footer%}
+<form action="{{url_for('add_user')}}" method="post">
+  <input
+    class="form-input"
+    type="text"
+    name="username"
+    id="username"
+    ,
+    placeholder="Username"
+    required
+  />
+  <input
+    class="form-input"
+    type="text"
+    name="contact"
+    id="contact"
+    placeholder="Kontaktdaten"
+    required
+  />
+  <input
+    class="form-input"
+    type="text"
+    name="full"
+    id="full"
+    placeholder="Voller Name"
+    required
+  />
+  <input
+    class="form-input"
+    type="text"
+    name="orga"
+    id="orga"
+    placeholder="Organisation"
+  />
+  <input class="form-btn" type="submit" value="Add" />
+</form>
+{%endblock%}

@@ -1,0 +1,26 @@
+{%extends 'base.html'%} {%block main%}
+<h1>Tab</h1>
+<div class="section-heading">
+  <h2>{{user[0]}}</h2>
+  <h2>Total: {{user[1]}} $</h2>
+</div>
+{%endblock%} {%block footer%}
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <th scope="col">Datum</th>
+      <th scope="col">Drink</th>
+      <th scope="col">Total</th>
+    </thead>
+    <tbody>
+      {%for tab in tabs%}
+      <tr>
+        <td>{{tab[1]}}</td>
+        <td>{{tab[2]}}</td>
+        <td>{{tab[4]}} $</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{%endblock%}
