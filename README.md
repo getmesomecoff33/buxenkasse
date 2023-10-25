@@ -1,6 +1,11 @@
 # Buxenkasse
+Kleines Deckelsystem fuer die Theke
 
 ## Installation
+Run:
+>   python3 ./theke.py
+
+Ganz ehrlich, wer sich drauf einlaesst ist selber schuld. Kein Suppot.
 
 ## Usage
 
